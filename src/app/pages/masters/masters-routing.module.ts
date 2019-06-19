@@ -21,8 +21,3 @@ const routes: Routes = [{
   exports: [RouterModule],
 })
 export class MastersRoutingModule { }
-export const routedComponents = [
-    MastersComponent,
-    UserComponent,
-    OfficeComponent,
-];

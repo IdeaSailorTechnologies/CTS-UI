@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component  } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-
 import { SmartTableData } from '../../../@core/data/smart-table';
-
+import { AddofficeComponent } from './addoffice/addoffice.component';
+import { NbDialogService } from '@nebular/theme';
 @Component({
   selector: 'ngx-office',
   templateUrl: './office.component.html',
@@ -12,7 +12,7 @@ import { SmartTableData } from '../../../@core/data/smart-table';
   }
 `],
 })
-export class OfficeComponent implements OnInit {
+export class OfficeComponent   {
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
@@ -66,10 +66,21 @@ export class OfficeComponent implements OnInit {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: SmartTableData) {
+ 
+
+  names: string[] = [];
+
+  constructor(private service: SmartTableData,private addofficeService: NbDialogService) {
     const data = this.service.getOfficeData();
     this.source.load(data);
+
   }
+
+  open3() {
+    this.addofficeService.open(AddofficeComponent)
+      .onClose.subscribe(name => name && this.names.push(name));
+  }
+ 
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
@@ -82,4 +93,5 @@ export class OfficeComponent implements OnInit {
   }
 
 }
+
 

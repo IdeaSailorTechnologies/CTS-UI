@@ -1,0 +1,17 @@
+<nb-card>
+    <nb-card-header>Add New Office</nb-card-header>
+    <nb-card-body>
+      <input #name nbInput placeholder="Name">&nbsp;
+      <!-- <input #name nbInput placeholder="Contact Person">&nbsp;
+      <input #name nbInput placeholder="Number">&nbsp;
+      <input #name nbInput placeholder="Email">&nbsp;
+      <input #name nbInput placeholder="City">&nbsp;
+      <input #name nbInput placeholder="State">&nbsp;
+      <input #name nbInput placeholder="Country"><br> -->
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton status="danget" (click)="cancel()">Cancel</button>
+      <button nbButton status="success" (click)="submit(name.value)">Submit</button>
+    </nb-card-footer>
+  </nb-card>
+  
