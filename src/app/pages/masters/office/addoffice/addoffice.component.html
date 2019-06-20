@@ -1,13 +1,82 @@
 <nb-card>
     <nb-card-header>Add New Office</nb-card-header>
     <nb-card-body>
-      <input #name nbInput placeholder="Name">&nbsp;
-      <!-- <input #name nbInput placeholder="Contact Person">&nbsp;
-      <input #name nbInput placeholder="Number">&nbsp;
-      <input #name nbInput placeholder="Email">&nbsp;
-      <input #name nbInput placeholder="City">&nbsp;
-      <input #name nbInput placeholder="State">&nbsp;
-      <input #name nbInput placeholder="Country"><br> -->
+        <form>
+          <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="OfficeName">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Address">
+                  <!-- <textarea class="form-control" placeholder="Address"></textarea> -->
+                </div>
+          </div>
+          <div class="col-sm-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Landmark">
+              </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Contact Person">
+        </div>
+      </div>
+      <div class="col-sm-4">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Email-Id">
+          </div>
+          </div>
+          <div class="col-sm-4">
+              <div class="form-group validation-checkboxes row">
+                  <nb-checkbox style="padding-left: 15px;" status="success">Use As Warehouse</nb-checkbox>
+              </div>
+          </div>
+    </div>
+        <div class="row">
+          <div class="col-sm-4">
+        <div class="form-group">
+          <nb-select placeholder="Country" [(selected)]="commonSelectedItem" outline status="success">
+              <nb-option value="1">Option 1</nb-option>
+              <nb-option value="2">Option 2</nb-option>
+              <nb-option value="3">Option 3</nb-option>
+              <nb-option value="4">Option 4</nb-option>
+            </nb-select>
+        </div>
+        </div>
+        <div class="col-sm-4">
+        <div class="form-group">
+            <nb-select placeholder="State" [(selected)]="commonSelectedItem" outline status="success">
+              <nb-option value="1">Option 1</nb-option>
+              <nb-option value="2">Option 2</nb-option>
+              <nb-option value="3">Option 3</nb-option>
+              <nb-option value="4">Option 4</nb-option>
+            </nb-select>
+        </div>
+      </div>
+      <div class="col-sm-4">
+          <div class="form-group">
+              <nb-select placeholder="City" [(selected)]="commonSelectedItem" outline status="success">
+                  <nb-option value="1">Option 1</nb-option>
+                  <nb-option value="2">Option 2</nb-option>
+                  <nb-option value="3">Option 3</nb-option>
+                  <nb-option value="4">Option 4</nb-option>
+                </nb-select>
+          </div>
+          </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Pin">
+        </div>
+      </div>
+    </div>
+   </form>
     </nb-card-body>
     <nb-card-footer>
       <button nbButton status="danget" (click)="cancel()">Cancel</button>

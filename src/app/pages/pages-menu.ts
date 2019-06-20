@@ -238,6 +238,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Office',
         link: '/pages/masters/office',
       },
+      {
+        title: 'Company-Profile',
+        link: '/pages/masters/Company-Profile',
+      },
     ],
   },
   {

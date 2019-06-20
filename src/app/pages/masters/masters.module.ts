@@ -7,13 +7,14 @@ import { OfficeComponent } from './office/office.component';
 import { UserComponent } from './user/user.component';
 import { MastersComponent } from './masters.component';
 import { NbDialogModule, NbWindowModule } from '@nebular/theme';
-
+import { CompanyProfileComponent } from './company-profile/company-profile.component';
 
 const COMPONENTS = [
-  MastersComponent,
+ MastersComponent,
  OfficeComponent,
  UserComponent,
  AddofficeComponent,
+ CompanyProfileComponent,
 ];
 
 const ENTRY_COMPONENTS = [
@@ -28,6 +29,7 @@ const MODULES = [
   Ng2SmartTableModule,
   NbDialogModule.forChild(),
   NbWindowModule.forChild(),
+ 
 ];
 
 const SERVICES = [
@@ -39,6 +41,7 @@ const SERVICES = [
   ],
   declarations: [
     ...COMPONENTS,
+    CompanyProfileComponent,
   ],
   providers: [
     ...SERVICES,
