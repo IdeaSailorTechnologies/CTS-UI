@@ -1,86 +1,95 @@
 <nb-card>
     <nb-card-header>Add New Office</nb-card-header>
     <nb-card-body>
-        <form>
-          <div class="row">
-              <div class="col-sm-4">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="OfficeName">
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Address">
-                  <!-- <textarea class="form-control" placeholder="Address"></textarea> -->
-                </div>
-          </div>
+      <form [formGroup]="officeForm" (ngSubmit)="SaveOffice()">
+        <div class="row">
           <div class="col-sm-4">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Landmark">
-              </div>
+            <div class="form-group">
+              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="officename" formControlName="officename"
+              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
             </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="Contact Person" formControlName="Contact"
+              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="Email-Id" formControlName="Email-Id"
+              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+            </div>
+          </div>
         </div>
         <div class="row">
           <div class="col-sm-4">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Contact Person">
-        </div>
-      </div>
-      <div class="col-sm-4">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Email-Id">
-          </div>
+            <div class="form-group">
+              <!-- <input type="text" class="form-control" placeholder="Address"> -->
+              <textarea style="padding: 0.25rem 0.125rem;" class="form-control" placeholder="Address" formControlName="Address"
+              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}"></textarea>
+            </div>
           </div>
           <div class="col-sm-4">
-              <div class="form-group validation-checkboxes row">
-                  <nb-checkbox style="padding-left: 15px;" status="success">Use As Warehouse</nb-checkbox>
-              </div>
+            <div class="form-group">
+              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="Landmark" formControlName="Landmark"
+              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+            </div>
           </div>
-    </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <nb-select placeholder="Country" [(selected)]="commonSelectedItem" outline status="success" formControlName="Country"
+              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+                <nb-option value="1">Option 1</nb-option>
+                <nb-option value="2">Option 2</nb-option>
+                <nb-option value="3">Option 3</nb-option>
+                <nb-option value="4">Option 4</nb-option>
+              </nb-select>
+            </div>
+          </div>
+        </div>
         <div class="row">
           <div class="col-sm-4">
-        <div class="form-group">
-          <nb-select placeholder="Country" [(selected)]="commonSelectedItem" outline status="success">
-              <nb-option value="1">Option 1</nb-option>
-              <nb-option value="2">Option 2</nb-option>
-              <nb-option value="3">Option 3</nb-option>
-              <nb-option value="4">Option 4</nb-option>
-            </nb-select>
-        </div>
-        </div>
-        <div class="col-sm-4">
-        <div class="form-group">
-            <nb-select placeholder="State" [(selected)]="commonSelectedItem" outline status="success">
-              <nb-option value="1">Option 1</nb-option>
-              <nb-option value="2">Option 2</nb-option>
-              <nb-option value="3">Option 3</nb-option>
-              <nb-option value="4">Option 4</nb-option>
-            </nb-select>
-        </div>
-      </div>
-      <div class="col-sm-4">
-          <div class="form-group">
-              <nb-select placeholder="City" [(selected)]="commonSelectedItem" outline status="success">
-                  <nb-option value="1">Option 1</nb-option>
-                  <nb-option value="2">Option 2</nb-option>
-                  <nb-option value="3">Option 3</nb-option>
-                  <nb-option value="4">Option 4</nb-option>
-                </nb-select>
+            <div class="form-group">
+              <nb-select placeholder="State" [(selected)]="commonSelectedItem" outline status="success" formControlName="State"
+              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+                <nb-option value="1">Option 1</nb-option>
+                <nb-option value="2">Option 2</nb-option>
+                <nb-option value="3">Option 3</nb-option>
+                <nb-option value="4">Option 4</nb-option>
+              </nb-select>
+            </div>
           </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <nb-select placeholder="City" [(selected)]="commonSelectedItem" outline status="success" formControlName="City"
+              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+                <nb-option value="1">Option 1</nb-option>
+                <nb-option value="2">Option 2</nb-option>
+                <nb-option value="3">Option 3</nb-option>
+                <nb-option value="4">Option 4</nb-option>
+              </nb-select>
+            </div>
           </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Pin">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="Pin" formControlName="Pin"
+              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-   </form>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group validation-checkboxes row">
+              <nb-checkbox style="padding-left: 15px;" status="success">Use As Warehouse</nb-checkbox>
+            </div>
+          </div>
+        </div>
+        <nb-card-footer style="float:right;">
+          <button style="background-color:#2196f3;"nbButton >Submit</button>&nbsp;
+          <button nbButton status="danger" (click)="cancel()">Cancel</button>
+        </nb-card-footer>
+      </form>
     </nb-card-body>
-    <nb-card-footer>
-      <button nbButton status="danget" (click)="cancel()">Cancel</button>
-      <button nbButton status="success" (click)="submit(name.value)">Submit</button>
-    </nb-card-footer>
   </nb-card>
   

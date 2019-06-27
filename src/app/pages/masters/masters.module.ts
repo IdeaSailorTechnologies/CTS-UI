@@ -9,12 +9,14 @@ import { MastersComponent } from './masters.component';
 import { NbDialogModule, NbWindowModule } from '@nebular/theme';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 
+
 const COMPONENTS = [
  MastersComponent,
  OfficeComponent,
  UserComponent,
  AddofficeComponent,
  CompanyProfileComponent,
+ 
 ];
 
 const ENTRY_COMPONENTS = [

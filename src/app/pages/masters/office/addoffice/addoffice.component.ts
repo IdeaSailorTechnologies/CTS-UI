@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'ngx-addoffice',
   templateUrl: './addoffice.component.html',
   styleUrls: ['./addoffice.component.scss']
 })
-export class AddofficeComponent   {
+export class AddofficeComponent implements OnInit  {
 
-  constructor(protected ref: NbDialogRef<AddofficeComponent>) { }
+  officeForm: FormGroup;
+  constructor(protected ref: NbDialogRef<AddofficeComponent>,private fb: FormBuilder) { }
   cancel() {
     this.ref.close();
+  
   }
 
   submit(name) {
@@ -17,6 +21,17 @@ export class AddofficeComponent   {
   }
 
   ngOnInit() {
+    this.officeForm = this.fb.group({
+      officename: ['', Validators.required],
+      Contact: ['', Validators.required],
+    });
+    
   }
+
+  
+  SaveOffice() {
+    this.officeForm.markAsDirty();
+  }
+
 
 }
