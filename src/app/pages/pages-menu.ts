@@ -242,6 +242,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Company-Profile',
         link: '/pages/masters/Company-Profile',
       },
+      {
+        title: 'Warehouse',
+        link: '/pages/masters/Warehouse',
+      },
+      {
+        title: 'Userrole',
+        link: '/pages/masters/Userrole',
+      },
     ],
   },
   {

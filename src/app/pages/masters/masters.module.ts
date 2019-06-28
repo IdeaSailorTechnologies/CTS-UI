@@ -8,7 +8,11 @@ import { UserComponent } from './user/user.component';
 import { MastersComponent } from './masters.component';
 import { NbDialogModule, NbWindowModule } from '@nebular/theme';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
-
+import { AdduserComponent } from './user/adduser/adduser.component';
+import { WarehouseComponent } from './warehouse/warehouse.component';
+import { AddwarehouseComponent } from './warehouse/addwarehouse/addwarehouse.component';
+import { UserroleComponent } from './userrole/userrole.component';
+import { AdduserroleComponent } from './userrole/adduserrole/adduserrole.component';
 
 const COMPONENTS = [
  MastersComponent,
@@ -16,13 +20,19 @@ const COMPONENTS = [
  UserComponent,
  AddofficeComponent,
  CompanyProfileComponent,
- 
+ AdduserComponent,
+ WarehouseComponent,
+ AddwarehouseComponent,
+ UserroleComponent,
+ AdduserroleComponent,
 ];
 
 const ENTRY_COMPONENTS = [
   
   AddofficeComponent,
-
+  AdduserComponent,
+  AddwarehouseComponent,
+  AdduserroleComponent,
 ];
 
 const MODULES = [
@@ -44,6 +54,12 @@ const SERVICES = [
   declarations: [
     ...COMPONENTS,
     CompanyProfileComponent,
+    UserComponent,
+    AdduserComponent,
+    WarehouseComponent,
+    AddwarehouseComponent,
+    UserroleComponent,
+    AdduserroleComponent,
   ],
   providers: [
     ...SERVICES,

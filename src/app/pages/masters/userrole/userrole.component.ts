@@ -1,19 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { SmartTableData } from "../../../@core/data/smart-table";
-import { AdduserComponent } from './adduser/adduser.component';
+import { AdduserroleComponent } from './adduserrole/adduserrole.component';
 import { NbDialogService } from '@nebular/theme';
 @Component({
-  selector: 'ngx-user',
-  templateUrl: './user.component.html',
-  styles: [`
-    nb-card {
-      transform: translate3d(0, 0, 0);
-    }
-  `],
-  
+  selector: 'ngx-userrole',
+  templateUrl: './userrole.component.html',
+  styleUrls: ['./userrole.component.scss']
 })
-export class UserComponent {
+export class UserroleComponent implements OnInit {
+
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
@@ -30,48 +26,38 @@ export class UserComponent {
       confirmDelete: true,
     },
     columns: {
-      firstName: {
-        title: 'First Name',
+      Userrole: {
+        title: 'User Role',
         type: 'string',
       },
-      lastName: {
-        title: 'Last Name',
+      Createddate: {
+        title: 'Created Date',
         type: 'string',
       },
-      Email: {
-        title: 'Email',
-        type: 'string',
-      },
-      contactnumber: {
-        title: 'Contact Number',
-        type: 'number',
-      },
-      Role: {
-        title: 'Role',
+      Createdby: {
+        title: 'Created By',
         type: 'string',
       },
       
-      Office: {
-        title: 'Office',
-        type: 'string',
-      },
-      Warehouse: {
-        title: 'Warehouse',
-        type: 'string',
-      },
     },
   };
   source: LocalDataSource = new LocalDataSource();
+
   names: string[] = [];
-  constructor(private service: SmartTableData,private addouserService: NbDialogService) {
-    const data = this.service.getUserData();
+
+  constructor(private service: SmartTableData,private adduserroleService: NbDialogService) {
+    const data = this.service.getUserroleData();
     this.source.load(data);
+
   }
+
   open3() {
-    this.addouserService.open(AdduserComponent)
+    this.adduserroleService.open(AdduserroleComponent)
       .onClose.subscribe(name => name && this.names.push(name));
   }
-   onDeleteConfirm(event): void {
+ 
+
+  onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
     } else {
@@ -80,5 +66,4 @@ export class UserComponent {
   }
   ngOnInit() {
   }
-
 }

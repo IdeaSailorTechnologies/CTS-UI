@@ -1,0 +1,81 @@
+<nb-card>
+  <nb-card-header>Add User</nb-card-header>
+  <nb-card-body>
+      <form>
+         <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                      <input type="text" class="form-control" id="inputWebsite" placeholder="Last Name">
+                      </div>
+                    </div>
+              </div>
+            
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email-Id">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="inputWebsite" placeholder="Contact Number">
+                </div>
+              </div>
+            </div>
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Password">
+                      </div>
+                    </div>
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <nb-select placeholder="Role" [(selected)]="commonSelectedItem">
+                                  <nb-option value="1">Option 1</nb-option>
+                                  <nb-option value="2">Option 2</nb-option>
+                                  <nb-option value="3">Option 3</nb-option>
+                                  <nb-option value="4">Option 4</nb-option>
+                                </nb-select>
+                          </div>
+                        </div>
+              </div>
+              
+            
+    <div class="row">
+      <div class="col-sm-6">
+         <div class="form-group">
+               <nb-select placeholder="Office" [(selected)]="commonSelectedItem">
+                            <nb-option value="1">Option 1</nb-option>
+                            <nb-option value="2">Option 2</nb-option>
+                            <nb-option value="3">Option 3</nb-option>
+                            <nb-option value="4">Option 4</nb-option>
+                          </nb-select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <nb-select placeholder="Warehouse" [(selected)]="commonSelectedItem">
+                            <nb-option value="1">Option 1</nb-option>
+                            <nb-option value="2">Option 2</nb-option>
+                            <nb-option value="3">Option 3</nb-option>
+                            <nb-option value="4">Option 4</nb-option>
+                          </nb-select>
+                    </div>
+                  </div>
+                </div>
+            </form>
+    
+ 
+          </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="success" (click)="submit(name.value)">Save</button>
+    <button nbButton status="success" (click)="submit(name.value)">Reset</button>
+    <button nbButton status="danget" (click)="cancel()">Cancel</button>
+    <!-- <button type="reset" value="Reset">Reset</button> -->
+  </nb-card-footer>
+</nb-card>

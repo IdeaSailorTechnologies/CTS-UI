@@ -9,8 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddofficeComponent implements OnInit  {
 
-  officeForm: FormGroup;
-  constructor(protected ref: NbDialogRef<AddofficeComponent>,private fb: FormBuilder) { }
+  AddofficeForm: FormGroup;
+  submitted = false;
+  constructor(protected ref: NbDialogRef<AddofficeComponent>,private formBuilder: FormBuilder) { }
   cancel() {
     this.ref.close();
   
@@ -19,19 +20,29 @@ export class AddofficeComponent implements OnInit  {
   submit(name) {
     this.ref.close(name);
   }
-
+ 
   ngOnInit() {
-    this.officeForm = this.fb.group({
-      officename: ['', Validators.required],
-      Contact: ['', Validators.required],
-    });
+    this.AddofficeForm = this.formBuilder.group({
+      officename: ['', [Validators.required, Validators.minLength(50)]],
+      ContactPerson: ['', [Validators.required, Validators.minLength(50)]],
+      EmailId: ['', [Validators.required, Validators.email]],
+      Address:['',[Validators.required, Validators.minLength(50)]],
+      Country:['', Validators.required],
+     });
     
   }
+ // convenience getter for easy access to form fields
+ get f() { return this.AddofficeForm.controls; }
 
-  
-  SaveOffice() {
-    this.officeForm.markAsDirty();
-  }
+ onSubmit() {
+     this.submitted = true;
 
+     // stop here if form is invalid
+     if (this.AddofficeForm.invalid) {
+         return;
+     }
+
+     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.AddofficeForm.value))
+ }
 
 }

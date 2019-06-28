@@ -11,3 +11,17 @@
   }
  
 }
+input.is-invalid.ng-invalid {
+  border: 1px solid #9f3a38 !important;
+  background-color: #fff6f6;
+  }
+  
+  textarea.is-invalid.ng-invalid {
+  border: 1px solid #9f3a38;
+  background-color: #fff6f6;
+  }
+  
+  select.is-invalid.ng-invalid {
+  border: 1px solid #9f3a38;
+  background-color: #fff6f6;
+  }

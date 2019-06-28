@@ -1,24 +1,31 @@
 <nb-card>
     <nb-card-header>Add New Office</nb-card-header>
     <nb-card-body>
-      <form [formGroup]="officeForm" (ngSubmit)="SaveOffice()">
+      <form [formGroup]="AddofficeForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-sm-4">
             <div class="form-group">
-              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="officename" formControlName="officename"
-              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="officename" formControlName="officename" [ngClass]="{ 'is-invalid': submitted && f.officename.errors }">
+              <div *ngIf="submitted && f.officename.errors" class="invalid-feedback">
+                  <div *ngIf="f.officename.errors.required">Office Name is required</div>
+              </div>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="form-group">
-              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="Contact Person" formControlName="Contact"
-              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="ContactPerson" formControlName="ContactPerson" [ngClass]="{ 'is-invalid': submitted && f.ContactPerson.errors }">
+              <div *ngIf="submitted && f.ContactPerson.errors" class="invalid-feedback">
+                  <div *ngIf="f.ContactPerson.errors.required">ContactPerson Name is required</div>
+              </div>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="form-group">
-              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="Email-Id" formControlName="Email-Id"
-              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="EmailId" formControlName="EmailId" [ngClass]="{ 'is-invalid': submitted && f.EmailId.errors }">
+              <div *ngIf="submitted && f.EmailId.errors" class="invalid-feedback">
+                  <div *ngIf="f.EmailId.errors.required">Email is required</div>
+                  <div *ngIf="f.EmailId.errors.EmailId">Email must be a valid email address</div>
+              </div>
             </div>
           </div>
         </div>
@@ -26,20 +33,20 @@
           <div class="col-sm-4">
             <div class="form-group">
               <!-- <input type="text" class="form-control" placeholder="Address"> -->
-              <textarea style="padding: 0.25rem 0.125rem;" class="form-control" placeholder="Address" formControlName="Address"
-              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}"></textarea>
+              <textarea style="padding: 0.25rem 0.125rem;" class="form-control" placeholder="Address" formControlName="Address" [ngClass]="{ 'is-invalid': submitted && f.Address.errors }"></textarea>
+              <div *ngIf="submitted && f.Address.errors" class="invalid-feedback">
+                  <div *ngIf="f.Address.errors.required">Address is required</div>
+              </div>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="form-group">
-              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="Landmark" formControlName="Landmark"
-              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="Landmark">
             </div>
           </div>
           <div class="col-sm-4">
             <div class="form-group">
-              <nb-select placeholder="Country" [(selected)]="commonSelectedItem" outline status="success" formControlName="Country"
-              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+              <nb-select placeholder="Country" [(selected)]="commonSelectedItem" outline status="success" [(ngModel)]="Country" formControlName="Country"  [ngClass]="{ 'is-invalid': submitted && f.Country.errors }">
                 <nb-option value="1">Option 1</nb-option>
                 <nb-option value="2">Option 2</nb-option>
                 <nb-option value="3">Option 3</nb-option>
@@ -51,8 +58,7 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="form-group">
-              <nb-select placeholder="State" [(selected)]="commonSelectedItem" outline status="success" formControlName="State"
-              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+              <nb-select placeholder="State" [(selected)]="commonSelectedItem" outline status="success">
                 <nb-option value="1">Option 1</nb-option>
                 <nb-option value="2">Option 2</nb-option>
                 <nb-option value="3">Option 3</nb-option>
@@ -62,8 +68,7 @@
           </div>
           <div class="col-sm-4">
             <div class="form-group">
-              <nb-select placeholder="City" [(selected)]="commonSelectedItem" outline status="success" formControlName="City"
-              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+              <nb-select placeholder="City" [(selected)]="commonSelectedItem" outline status="success">
                 <nb-option value="1">Option 1</nb-option>
                 <nb-option value="2">Option 2</nb-option>
                 <nb-option value="3">Option 3</nb-option>
@@ -73,8 +78,7 @@
           </div>
           <div class="col-sm-4">
             <div class="form-group">
-              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="Pin" formControlName="Pin"
-              [ngClass]="{'form-control-danger': officeForm.invalid && (officeForm.dirty || officeForm.touched)}">
+              <input style="padding: 0.25rem 0.125rem;" type="text" class="form-control" placeholder="Pin">
             </div>
           </div>
         </div>

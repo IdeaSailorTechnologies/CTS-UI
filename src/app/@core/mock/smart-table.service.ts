@@ -685,6 +685,74 @@ export class SmartTableService extends SmartTableData {
 'City': 'Pune',
 'Pin':'411041',
 }];
+UserData = [
+  { 
+  'First Name': 'Shan',
+  'Last Name': 'Shan',
+  'E-mail': 'Software eng',
+  'Contact Number': '8956232145',
+  'Role': 'shan@gmail.com',
+  'Office': 'Pune ideasailor',
+  'Warehouse': 'xyz',
+  
+  },
+  {
+    'First Name': 'Shan',
+    'Last Name': 'Shan',
+    'E-mail': 'Software eng',
+    'Contact Number': '8956232145',
+    'Role': 'shan@gmail.com',
+    'Office': 'Pune ideasailor',
+    'Warehouse': 'xyz',
+    
+  }];
+  WarehouseData=[
+    { 'id': 1,
+    'Name': 'vbbn',
+    'officeName': 'Pune Office',
+    'Address': 'Pune Office',
+    'Landmark': 'Pune Office',
+    'Contact Person': 'Shan',
+    'Mobile Number': '8956232145',
+    'Email-Id': 'shan@gmail.com',
+    'Country': 'Pune',
+    'State': 'Maharashtra',
+    'City': 'India',
+    'Pincode': '440022',
+    },
+  {
+    'id': 2,
+    'Name': 'vbbn',
+    'officeName': 'Pune Office',
+    'Address': 'Pune Office',
+    'Landmark': 'Pune Office',
+    'Contact Person': 'Shan',
+    'Mobile Number': '8956232145',
+    'Email-Id': 'shan@gmail.com',
+    'Country': 'Pune',
+    'State': 'Maharashtra',
+    'City': 'India',
+    'Pincode': '411038',
+    }
+  ];
+  UserroleData =[
+    {
+      'id': 1,
+      'User Role': 1,
+      'Created Date': 25/6/2019,
+      'Created By': 1,
+      
+    },
+    {
+      'id': 2,
+      'User Role': 1,
+      'Created Date': 25/6/2019,
+      'Created By': 1,
+      
+    }
+    
+      ];
+    
 
   getData() {
     return this.data;
@@ -692,4 +760,14 @@ export class SmartTableService extends SmartTableData {
   getOfficeData() {
     return this.OfficeData;
   }
+  getUserData()
+  {
+    return this.UserData;
+  }
+  getWarehouseData() {
+    return this.WarehouseData;
+  }
+  getUserroleData() {
+    return this.UserroleData;
+    }
 }

@@ -1,7 +1,7 @@
 <nb-card>
     <nb-card-header>Company Profile</nb-card-header>
     <nb-card-body>
-        <form>
+        <form [formGroup]="companyprofile">
           <h6 style="background-color:#2196f3;color: #f5f3f3;padding:10px;">Company Registered Address</h6>&nbsp;
           <div class="row">
               <div class="col-sm-2">
@@ -121,9 +121,9 @@
 </div>
 </form>     
     </nb-card-body>
-    <nb-card-footer>
-      <button nbButton status="success" (click)="submit(name.value)">Submit</button>
-      <button nbButton status="danget" (click)="cancel()">Cancel</button>&nbsp;
+    <nb-card-footer style="float:right;">
+      <button style="background-color:#2196f3;"nbButton >Submit</button>&nbsp;
+      <button nbButton status="danger" (click)="cancel()">Cancel</button>
     </nb-card-footer>
   </nb-card>
   
